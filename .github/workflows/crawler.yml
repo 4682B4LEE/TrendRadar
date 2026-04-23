@@ -166,5 +166,7 @@ jobs:
           S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
           S3_ENDPOINT_URL: ${{ secrets.S3_ENDPOINT_URL }}
           S3_REGION: ${{ secrets.S3_REGION }}
+          # 存储后端配置（可选，用于强制指定存储方式）
+          STORAGE_BACKEND: ${{ secrets.STORAGE_BACKEND }}
           GITHUB_ACTIONS: true
         run: uv run python -m trendradar

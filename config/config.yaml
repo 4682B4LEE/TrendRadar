@@ -175,7 +175,7 @@ report:
 # 2) keyword 模式：看 config/frequency_words.txt
 # 3) ai 模式：看 config/ai_interests.txt + 下方 ai_filter 配置
 # 4) priority_sort_enabled 只影响 ai 模式标签排序
-# 5) 这里决定“筛选路径”，不决定 AI 模型（模型在 ai 段）
+# 5) 这里决定"筛选路径"，不决定 AI 模型（模型在 ai 段）
 # ===============================================================
 filter:
   method: "ai"                     # 可选: keyword | ai
@@ -197,7 +197,7 @@ filter:
 # 5) prompt_file 系列属于进阶项，默认一般不用改
 #
 # 进阶说明：
-# - min_score 越高，结果越“准”但会漏召回
+# - min_score 越高，结果越"准"但会漏召回
 # - reclassify_threshold 越低，越倾向全量重分类（更耗 token）
 # - 模型配置统一在下方 ai 段
 # ===============================================================
@@ -212,7 +212,7 @@ ai_filter:
 
   # 兴趣描述文件
   # 默认使用 config/ai_interests.txt，无需在此配置
-  # 这里设置的是“全局默认”，可被 timeline.yaml 时段内的 interests_file 覆盖
+  # 这里设置的是"全局默认"，可被 timeline.yaml 时段内的 interests_file 覆盖
   # 如需使用自定义文件，将文件放入 config/custom/ai/ 目录，然后指定文件名：
   # interests_file: "finance.txt"    # → 加载 config/custom/ai/finance.txt
 
@@ -415,11 +415,11 @@ ai:
   # 完整列表: https://docs.litellm.ai/docs/providers
   # 如果你对于看英文文档比较头疼，那么可以点击页面右下角的 【Ask AI】 ,用中文询问怎么配置 
   
-  model: "deepseek/deepseek-chat"
+  model: "openai/moonshot-v1-32k"
 
   api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
   
-  api_base: ""                      # 自定义 API 端点（可选，大多数情况留空）
+  api_base: "https://api.moonshot.cn/v1"  # Moonshot API 端点
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
                                     #
                                     # 💡 超级重要：连接任意兼容 OpenAI 协议的模型商
